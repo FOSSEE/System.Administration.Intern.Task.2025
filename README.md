@@ -21,6 +21,33 @@ It is deployed on a Rocky Linux 10 DigitalOcean droplet with SSL-secured applica
 
 - **PHP APP**: [https://php.abhaypratap.dev](https://php.abhaypratap.dev)
 
+## Test Project Flow
+
+The following test accounts have been created in Keycloak for evaluation. Use these to log in to Drupal, Django, and PHP applications.
+
+```
+| Username  | Email          | Password |
+|-----------|----------------|----------|
+| test1     | test@test.com  | test1    |
+| test2     | test2@test.com | test2    |
+| testuser  | test@user.com  | test     |
+```
+
+- Login Workflow
+
+  - Open any app (Drupal, Django, PHP).
+  - Click Login.
+  - You’ll be redirected to Keycloak login page.
+  - Enter one of the above credentials.
+  - Redirected back to the app, now authenticated.
+  - Once logged in via one app, you can directly access the other two apps without logging in again. (SSO Implemented)
+
+- Logout Workflow
+  - Logout from any app (Drupal/Django/PHP).
+  - Refreshing other apps shows logged-out state. (SLO Implemented)
+
+> **Note:** All users must have an **email address** set in Keycloak to log in to Django, Drupal, and PHP applications.
+
 ## Project Structure
 
 ```
@@ -63,8 +90,6 @@ It is deployed on a Rocky Linux 10 DigitalOcean droplet with SSL-secured applica
 5. Follow [05-php.md](/docs/05-php.md) for PHP app deployment and SSO integration.
 
 6. Follow [06-testing.md](/docs/06-testing.md) to test the functionality of the entire project.
-
-> **Note:** All users must have an **email address** set in Keycloak to log in to Django, Drupal, and PHP applications.
 
 ## Features Implemented
 
